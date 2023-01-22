@@ -132,7 +132,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 									<p class="animated growIn " style="
     font-size: 14px;
 ">
-										<span> <strong class="gname"></strong> عزیز</span>
+										<span> <strong class="gname"></strong></span>
 										از صمیم قلب و صمیمانه حضور گرم و پر محبت شما را در شب سر آغاز زندگی مشترکمان آرزومندیم.
 									</p>
 								</div>
@@ -244,6 +244,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 				get: (searchParams, prop) => searchParams.get(prop),
 			});
 			let value = params.gname;
+			if(!value){
+				value = "مهمان گرامی"
+			}
 			$('.gname').text(value);
 			$('.ajaxyForm').on('submit', function(e) {
 				let submitBtn = e.target.querySelector('button#submit');
