@@ -212,10 +212,10 @@ a img { border:0; }
 #banner img { display:block; }
 
 #news { 
-	background:url(https://www.wed.talarkadeh.com/wp-content/themes/tn-wed/card-templates/1/images/news_bg.jpg) repeat-x 0 0; height:64px; position:relative; margin-bottom:20px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; padding:22px 0; }
+	background:url(../img/news_bg.jpg) repeat-x 0 0; height:64px; position:relative; margin-bottom:20px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; padding:22px 0; }
 #news:before, #news:after { content:""; display:block; width:63px; height:84px; position:absolute; }
-#news:before { top:-20px; right:-63px; background:url(https://www.wed.talarkadeh.com/wp-content/themes/tn-wed/card-templates/1/images/ribbon-right.png) no-repeat 0 0; }
-#news:after { top:-20px; left:-63px; background:url(https://www.wed.talarkadeh.com/wp-content/themes/tn-wed/card-templates/1/images/ribbon-left.png) no-repeat 0 0; }
+#news:before { top:-20px; right:-63px; background:url(../img/ribbon-right.png) no-repeat 0 0; }
+#news:after { top:-20px; left:-63px; background:url(../img/ribbon-left.png) no-repeat 0 0; }
 #news h3 { font-size:24px; color:#d8ceb7; float:right; margin-left:20px; font-weight:300;}
 #news p { font-size:14px; color:#d8ceb7;overflow:hidden;text-overflow:ellipsis }
 #about {
@@ -414,8 +414,8 @@ color: #FFFFFF; font-size: 12px; height: 24px; line-height: 23px; text-align: ce
 @media screen and (min-width:480px) and (max-width:767px){
 	img { max-width:100%; height:auto; }
 	.wrapper { overflow: hidden; padding:0 20px; width:100%; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; }
-#news:before { top:0px;width:50px; right:-50px;background:url(https://www.wed.talarkadeh.com/wp-content/themes/tn-wed/card-templates/1/images/news_bg.jpg) repeat-x 0 0; height:64px; }
-#news:after { top:0px;width:50px; left:-50px;background:url(https://www.wed.talarkadeh.com/wp-content/themes/tn-wed/card-templates/1/images/news_bg.jpg) repeat-x 0 0; height:64px; }
+#news:before { top:0px;width:50px; right:-50px;background:url(../img/news_bg.jpg) repeat-x 0 0; height:64px; }
+#news:after { top:0px;width:50px; left:-50px;background:url(../img/news_bg.jpg) repeat-x 0 0; height:64px; }
 	
 	#news h3 {font-size:14px;}
 	#news p  {font-size:10px;margin-top:-11px;}
