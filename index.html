@@ -341,7 +341,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 	</script>
 
 						<script>
+							$('#loading').fadeIn('normal');
 							jQuery(document).ready(function($) {
+								$('#loading').fadeOut('normal');
 								var x = new Date("Jan 30, 2023 18:00:00");
 								var y = new Date();
 								let dif = Math.abs(x.getTime() - y.getTime()) / 1000;
