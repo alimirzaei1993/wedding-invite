@@ -125,21 +125,19 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     height: auto;
     left: 38px;
     top: 29px;" />
-								<img src="img/b.png" alt="Banner" class="animated growIn go" style="position: absolute;width: 400px;    height: 341px;" />
+								<img src="img/b.png" alt="Banner" class="animated" style="position: absolute;width: 400px;    height: 341px;" />
 							</section>
 							<section id="news">
-								<div class="animatedParent newsAnimatedParent">
-									<p class="" style="font-size: 14px; line-height: 21px; text-align: center;
-	">
+								<div class="animatedParent newsAnimatedParent" style="margin-top: -10px;">
+									<p class="fix-vertical" style="font-size: 14px; line-height: 21px; text-align: center;">  
 										<span> <strong class="gname"></strong></span>
-										از صمیم قلب و صمیمانه حضور گرم و پر محبت شما را در شب سر آغاز زندگی مشترکمان آرزومندیم.
-									</p>
+								</p>
 								</div>
 							</section>
 							<section class="section" id="about">
 										
 								<div class="div animatedParent">
-									<p class="shekasteh animated growIn card__main-text" style="line-height: 250%;
+									<p class="shekasteh animated growIn  go card__main-text" style="line-height: 250%;
     font-size: 24px;
     color: #5F4618;
     margin-top: -70px;">
@@ -148,7 +146,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 سفری تا انتهای زندگی…..
 به امید با هم رفتن و با هم ماندن….
 تا جاییکه هیچ اشکی از چشمی نبارد جز به شوق….
-در اغاز این سفر همراهیمان کنید….	
+در اغاز این سفر همراهیمان کنید….
+<span class="nogname shekasteh "></span>
 								</p>
 								</div>
 							</section>
@@ -158,8 +157,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 ">
 																<div class="animatedParent">
-									<p class="animated growIn shekasteh">روز دوشنبه ۱۰ بهمن ساعت ۱۸ </p>
-									<p class="animated growIn shekasteh" style="
+									<p class="animated growIn  go shekasteh">روز دوشنبه ۱۰ بهمن از ساعت ۱۸ </p>
+									<p class="animated growIn  go shekasteh" style="
     font-size: 25px;
     line-height: 70px;
 ">
@@ -212,7 +211,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 								</div>
 								<br>
 								<p style="font-family: 'dastnevis';
-    font-size: 23px;">با کلیک روی هرکدوم از لینک های زیر میتونین به راحتی عمارت شیخ خان رو پیدا کنید</p>
+    font-size: 23px;">با کلیک روی هرکدوم از لینک های زیر میتونین به راحتی آدرس رو پیدا کنید</p>
 								<br>
 								<div style="text-align:center">
 									<a href="https://goo.gl/maps/Pr21SkwuSWgRCv5V8" target="_blank" class="btn old-btn btn-primary">
@@ -239,7 +238,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <br>
 <br><br>
 							<footer id="footer">
-								
+								Designed by benAdMir
 							</footer>
 						</div>
 						<div id="footerbar"></div>
@@ -249,7 +248,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 								maxZoom: 18,
 								id: 'mapbox.streets',
 							}).addTo(map);
-							L.marker([35.7480462,51.0521795,19.5]).bindPopup("عروسی ما اینجاست").addTo(map).openPopup();
+							L.marker([35.7480462,51.0521795,19.5]).bindPopup("عمارت شیخ خان").addTo(map).openPopup();
 													</script>
 						<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 								<script src="https://www.wed.talarkadeh.com/wp-content/themes/tn-wed/static/js/jquery-ajax-form.js"></script>
@@ -258,18 +257,32 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			color: #b9ac80;
     text-shadow: -1px 0px 10px rgb(12 11 11 / 77%);
 }
+
+.fix-vertical{
+	vertical-align: middle; 
+ display: table-cell;
+}
+
+.fix-margin{
+	margin-top: 9px !important;
+}
 		</style><script>
 		jQuery(document).ready(function($) {
 			const params = new Proxy(new URLSearchParams(window.location.search), {
 				get: (searchParams, prop) => searchParams.get(prop),
 			});
 			let value = params.gname;
+			const defText = 'از صمیم قلب و صمیمانه حضور گرم و پر محبت شما را در شب سر آغاز زندگی مشترکمان آرزومندیم.';
 			if(!value){
-				value = "مهمان گرامی"
-			}else{
-				value = value.replaceAll('_',' ')+"، ";
+				$('.gname').text(defText);
+				$('.nogname').text('');
+						}else{
+				value = value.replaceAll('_',' ');
+				$('.gname').text('مهمان محترم: ' + value);
+				$('.nogname').text(defText);
+				$('.newsAnimatedParent p').removeClass('fix-vertical').addClass('fix-margin');
 			}
-			$('.gname').text(value);
+			
 			$('.ajaxyForm').on('submit', function(e) {
 				let submitBtn = e.target.querySelector('button#submit');
 				e.preventDefault(); // <-- important
