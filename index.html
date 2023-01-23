@@ -167,7 +167,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 									<table id="countdown">
 										<thead>
 											<tr>
-												<th colspan="5" style="font-family: 'dastnevis';">زمان باقیمانده تا جشن</th>
+												<th colspan="5" style="font-family: 'dastnevis';">زمان باقیمانده تا دیدار شما</th>
 											</tr>
 										</thead>
 										<tfoot>
@@ -332,6 +332,34 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 						<script>
 							jQuery(document).ready(function($) {
+								var x = new Date("Jan 30, 2023 18:00:00");
+								var y = new Date();
+								let dif = Math.abs(x.getTime() - y.getTime()) / 1000;
+
+								var s =parseInt(dif) ;
+								console.log(s);
+								var mah =parseInt(s / (60 * 60 * 24 * 30));
+								s = s % (60 * 60 * 24 * 30);
+								console.log(s);
+								var roz = parseInt(s / (60 * 60 * 24)) ;
+								s = s % (60 * 60 * 24);
+								console.log(s);
+								var sat = parseInt(s / (60 * 60));
+								s = s % (60 * 60);
+								console.log(s);
+
+								var dagh = parseInt(s / (60));
+								s =  s % (60);
+								console.log(s);
+
+								var min = s;
+								var ns = $('#ns').text(min);
+								var nm = $('#nm').text(dagh);
+								var nh = $('#nh').text(sat);
+								var nj = $('#nj').text(roz);
+								var nn = $('#nn').text(mah);
+								
+								
 								$(window).scroll(function() {
 									var s = $(this).scrollTop();
 									var h = $(window).height();
