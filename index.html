@@ -112,7 +112,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 										<img src="https://www.wed.talarkadeh.com/wp-content/themes/tn-wed/card-templates/1/images/logo.png" width="358" height="141" alt="Wedding" /></a>
 								</div>
 								<div id="address-number">
-									<p id="address">امروز: یکشنبه ۲ بهمن ۱۴۰۱</p>
+									<p id="address"></p>
 									<p id="number">جشن: دوشنبه ۱۰ بهمن ۱۴۰۱</p>
 								</div>
 							</div>
@@ -120,18 +120,17 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 						<div class="wrapper" style="overflow-x:hidden;     margin-top: -69px;">
 															
 					<section id="banner" class="animatedParent" style="position: relative;    width: 400px;    height: 340px;     margin-left: auto;    margin-right: auto;">
-								<img src="img/a.jpg" width="1014" height="518" alt="Banner" class="animated growIn go" style="    position: absolute;
+								<img src="img/a.jpg" alt="Banner" class="animated growIn go" style="    position: absolute;
     width: 300px;
     height: auto;
     left: 38px;
     top: 29px;" />
-								<img src="img/b.png" width="1014" height="518" alt="Banner" class="animated growIn go" style="position: absolute;width: 400px;    height: 341px;" />
+								<img src="img/b.png" alt="Banner" class="animated growIn go" style="position: absolute;width: 400px;    height: 341px;" />
 							</section>
 							<section id="news">
 								<div class="animatedParent newsAnimatedParent">
-									<p class="animated growIn " style="
-    font-size: 14px;
-">
+									<p class="" style="font-size: 14px; line-height: 21px; text-align: center;
+	">
 										<span> <strong class="gname"></strong></span>
 										از صمیم قلب و صمیمانه حضور گرم و پر محبت شما را در شب سر آغاز زندگی مشترکمان آرزومندیم.
 									</p>
@@ -155,6 +154,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 							</section>
 							<section class="section" id="eventtime" style="
     margin-top: 0px;
+	    margin-bottom: -92px;
+
 ">
 																<div class="animatedParent">
 									<p class="animated growIn shekasteh">روز دوشنبه ۱۰ بهمن ساعت ۱۸ </p>
@@ -207,10 +208,21 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 									<div id="map" style="width:100%;height:300px;" class="bg-dark"></div>
 								</div>
 								<br>
+								<p style="font-family: 'dastnevis';
+    font-size: 23px;">با کلیک روی هرکدوم از لینک های زیر میتونین به راحتی عمارت شیخ خان رو پیدا کنید</p>
+								<br>
 								<div style="text-align:center">
-									<a href="https://maps.google.com/maps?daddr=35.7480462,51.0521795,19.5" target="_blank" class="btn old-btn btn-primary">
-										<img src="https://www.talarkadeh.com/wp-content/themes/talarkadeh-beta/images/google.png"></a>&nbsp;<a href="https://waze.com/ul?ll=35.7480462,51.0521795,19.5&navigate=yes" target="_blank" class="btn old-btn btn-primary">
+									<a href="https://goo.gl/maps/Pr21SkwuSWgRCv5V8" target="_blank" class="btn old-btn btn-primary">
+										<img src="https://www.talarkadeh.com/wp-content/themes/talarkadeh-beta/images/google.png"></a>&nbsp;
+										<a href="https://waze.com/ul?ll=35.7480462,51.0521795,19.5&navigate=yes" target="_blank" class="btn old-btn btn-primary">
 										<img src="https://www.talarkadeh.com/wp-content/themes/talarkadeh-beta/images/waze.png"></a>
+										&nbsp;
+										<a href="https://neshan.org/maps/places/1133f308ad65056641f2bff216078f7a/%DA%AF%D8%B1%D9%85+%D8%AF%D8%B1%D9%87+%D8%B9%D9%85%D8%A7%D8%B1%D8%AA+%D8%B4%DB%8C%D8%AE+%D8%AE%D8%A7%D9%86" target="_blank"
+											class="btn old-btn btn-primary">
+											<img src="img/neshan.png" style="border-radius: 6px;
+    width: 100px;
+    -webkit-box-shadow: 3px 0px 3px -2px #000000;
+    box-shadow: 3px 0px 3px -2px #000000;"></a>
 								</div>
 								
 								<div class="div">&nbsp;</div>
@@ -238,7 +250,12 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 													</script>
 						<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 								<script src="https://www.wed.talarkadeh.com/wp-content/themes/tn-wed/static/js/jquery-ajax-form.js"></script>
-		<script>
+		<style>
+			.gname{
+			color: #b9ac80;
+    text-shadow: -1px 0px 10px rgb(12 11 11 / 77%);
+}
+		</style><script>
 		jQuery(document).ready(function($) {
 			const params = new Proxy(new URLSearchParams(window.location.search), {
 				get: (searchParams, prop) => searchParams.get(prop),
@@ -246,6 +263,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			let value = params.gname;
 			if(!value){
 				value = "مهمان گرامی"
+			}else{
+				value = value.replaceAll('_',' ')+"، ";
 			}
 			$('.gname').text(value);
 			$('.ajaxyForm').on('submit', function(e) {
